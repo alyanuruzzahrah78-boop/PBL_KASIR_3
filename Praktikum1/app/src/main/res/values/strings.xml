@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Praktikum1</string>
+    <string name="tv_nama">Nama Lengkap</string>
+    <string name="et_nama" />
+    <string name="bt_proses">Proses</string>
+    <string name="etm_hasil" />
+    <string name="tv_hasil">Hasilnya Adalah</string>
+</resources>

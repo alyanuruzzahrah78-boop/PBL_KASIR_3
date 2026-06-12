@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="2dp"
+    app:cardBackgroundColor="@android:color/white">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <!-- Icon Box Kiri -->
+
+        <!-- Teks Informasi -->
+        <ImageView
+            android:id="@+id/img_icon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_poli_medical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txtNamaLayanan"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Konsultasi Umum"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#0F172A"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintStart_toEndOf="@id/img_icon"
+            app:layout_constraintEnd_toStartOf="@id/badgeStatus"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/txtKategoriLayanan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Poli Umum • Reguler"
+            android:textSize="12sp"
+            android:textColor="#64748B"
+            android:layout_marginTop="2dp"
+            app:layout_constraintStart_toStartOf="@id/txtNamaLayanan"
+            app:layout_constraintTop_toBottomOf="@id/txtNamaLayanan"/>
+
+        <!-- Status Badge (Aktif) -->
+
+        <TextView
+            android:id="@+id/txtHargaLayanan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rp 150.000"
+            android:textColor="#2563EB"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:layout_marginTop="4dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@id/txtNamaLayanan"
+            app:layout_constraintTop_toBottomOf="@id/txtKategoriLayanan" />
+
+        <TextView
+            android:id="@+id/badgeStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_tag_lunas"
+            android:paddingHorizontal="8dp"
+            android:paddingVertical="4dp"
+            android:text="Aktif"
+            android:textColor="#10B981"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Tombol Menu Pilihan (Titik Tiga) -->
+        <ImageView
+            android:id="@+id/tombolPilihan"
+            android:layout_width="20dp"
+            android:layout_height="18dp"
+            android:src="@drawable/ic_more"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

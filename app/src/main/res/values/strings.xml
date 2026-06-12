@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">SIMRS KEL 3</string>
+    <string name="TODO" id="et_register">Belum punya akun?<u>Daftar Sekarang</u></string>
+    <string name="et_register">et_register\n</string>
+</resources>
