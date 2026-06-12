@@ -8,7 +8,6 @@
     android:background="#F8FAFC"
     tools:context=".LaporanActivity">
 
-    <!-- HEADER UTAMA (SUDAH DIPERBAIKI & DITUTUP) -->
     <LinearLayout
         android:id="@+id/layoutHeaderLaporan"
         android:layout_width="match_parent"
@@ -21,7 +20,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <!-- Foto Profil Bulat Pasien/Dokter -->
         <androidx.cardview.widget.CardView
             android:layout_width="36dp"
             android:layout_height="36dp"
@@ -36,7 +34,6 @@
                 android:src="@drawable/icon_pasien" />
         </androidx.cardview.widget.CardView>
 
-        <!-- Nama Rumah Sakit -->
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -53,6 +50,19 @@
             android:layout_height="24dp"
             android:src="@drawable/ic_notifikasi"
             app:tint="@android:color/holo_orange_light" />
+
+        <ImageView
+            android:id="@+id/btnKeluarRole3"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_gravity="center_vertical|end"
+            android:layout_marginEnd="16dp"
+            android:padding="4dp"
+            android:src="@drawable/ic_logout"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="#64748B" />
     </LinearLayout>
 
     <!-- KONTEN UTAMA (SCROLLABLE AREA) -->

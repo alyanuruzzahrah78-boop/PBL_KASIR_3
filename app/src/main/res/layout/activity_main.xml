@@ -44,6 +44,19 @@
             android:layout_height="24dp"
             app:srcCompat="@drawable/ic_notifikasi"
             app:tint="@android:color/holo_orange_light" />
+
+        <ImageView
+            android:id="@+id/btnKeluarRole4"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_gravity="center_vertical|end"
+            android:layout_marginEnd="16dp"
+            android:padding="4dp"
+            android:src="@drawable/ic_logout"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="#64748B" />
     </LinearLayout>
 
     <ScrollView

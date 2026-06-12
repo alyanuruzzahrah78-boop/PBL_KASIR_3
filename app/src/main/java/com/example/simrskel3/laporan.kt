@@ -3,6 +3,7 @@ package com.example.simrskel3
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -66,6 +67,12 @@ class LaporanActivity : AppCompatActivity() {
         menuDashboard?.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
+            startActivity(intent)
+            finish()
+        }
+
+        findViewById<ImageView>(R.id.btnKeluarRole3)?.setOnClickListener {
+            val intent = Intent(this, DaftarRoleActivity::class.java)
             startActivity(intent)
             finish()
         }

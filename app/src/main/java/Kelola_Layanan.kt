@@ -5,12 +5,14 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import kotlin.jvm.java
 
 class KelolaLayananActivity : AppCompatActivity() {
 
@@ -23,10 +25,38 @@ class KelolaLayananActivity : AppCompatActivity() {
 
         // 1. ISI DATA DUMMY (Sudah disesuaikan dengan model baru)
         daftarLayananAsli = listOf(
-            Layanan.Layanan(1, "Konsultasi Umum", "Poli Umum • Reguler", 150000, "Aktif", R.drawable.ic_poli_medical),
-            Layanan.Layanan(2, "Vaksinasi Influenza", "Poli Imunisasi • Paket", 450000, "Aktif", R.drawable.ic_vaksin),
-            Layanan.Layanan(3, "Rontgen Dada (Thorax)", "Radiologi • Penunjang", 280000, "Aktif", R.drawable.ic_rotgen),
-            Layanan.Layanan(4, "Cek Gula Darah", "Laboratorium • Rutin", 750000, "Aktif", R.drawable.ic_biotech)
+            Layanan.Layanan(
+                1,
+                "Konsultasi Umum",
+                "Poli Umum • Reguler",
+                150000,
+                "Aktif",
+                R.drawable.ic_poli_medical
+            ),
+            Layanan.Layanan(
+                2,
+                "Vaksinasi Influenza",
+                "Poli Imunisasi • Paket",
+                450000,
+                "Aktif",
+                R.drawable.ic_vaksin
+            ),
+            Layanan.Layanan(
+                3,
+                "Rontgen Dada (Thorax)",
+                "Radiologi • Penunjang",
+                280000,
+                "Aktif",
+                R.drawable.ic_rotgen
+            ),
+            Layanan.Layanan(
+                4,
+                "Cek Gula Darah",
+                "Laboratorium • Rutin",
+                750000,
+                "Aktif",
+                R.drawable.ic_biotech
+            )
         )
 
         // 2. Jalankan RecyclerView (Sekarang aman karena data sudah terisi)
@@ -39,6 +69,7 @@ class KelolaLayananActivity : AppCompatActivity() {
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                 saringData(s.toString())
             }
+
             override fun afterTextChanged(s: Editable?) {}
         })
 
@@ -100,5 +131,9 @@ class KelolaLayananActivity : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
+
+        val intent = Intent(this, DaftarRoleActivity::class.java)
+        startActivity(intent)
+        finish()
     }
 }

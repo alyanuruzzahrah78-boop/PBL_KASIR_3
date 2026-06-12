@@ -19,8 +19,10 @@ class MainActivity : AppCompatActivity() {
         btnMenuServices.setOnClickListener {
             val intent = Intent(this, KelolaLayananActivity::class.java)
             startActivity(intent)
-
-
         }
+
+        val intent = Intent(this, DaftarRoleActivity::class.java)
+        startActivity(intent)
+        finish()
     }
 }
