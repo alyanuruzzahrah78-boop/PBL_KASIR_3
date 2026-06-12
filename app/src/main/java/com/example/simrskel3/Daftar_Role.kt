@@ -11,13 +11,19 @@ class DaftarRoleActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_daftar_role)
 
-        val btnAdminKasir = findViewById<CardView>(R.id.btnAdminKasir)
+        val btnRoleAdmin = findViewById<CardView>(R.id.btnAdminKasir)
+        val btnRoleKasir = findViewById<CardView>(R.id.btnKasirBiasa)
 
-        // Logika ketika tombol Admin Kasir diklik
-        btnAdminKasir.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
-            finish() // Menutup halaman Daftar Role agar tidak bisa di-back lagi
+        // MASUK KE DASHBOARD ADMIN VIA MAINACTIVITY
+        btnRoleAdmin?.setOnClickListener {
+            val intentAdmin = Intent(this, MainActivity::class.java)
+            startActivity(intentAdmin)
+        }
+
+        // MASUK KE HALAMAN KASIR PASIEN
+        btnRoleKasir?.setOnClickListener {
+            val intentKasir = Intent(this, KasirPasienActivity::class.java)
+            startActivity(intentKasir)
         }
     }
 }

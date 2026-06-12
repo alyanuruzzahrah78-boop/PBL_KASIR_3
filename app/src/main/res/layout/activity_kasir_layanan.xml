@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.tools.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F8FAFC"
+    tools:context=".KasirLayananActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        android:padding="16dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/btnBack"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:src="?attr/homeAsUpIndicator"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="#0F172A" />
+
+        <TextView
+            android:id="@+id/txtNamaRS"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="Rumah Sakit Delta"
+            android:textColor="#0F172A"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/btnBack"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutStepper"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:padding="20dp"
+        app:layout_constraintTop_toBottomOf="@id/layoutHeader">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+            <TextView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:background="@android:drawable/toast_frame"
+                android:backgroundTint="#E2E8F0"
+                android:text="1"
+                android:textColor="#64748B"
+                android:gravity="center"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Patient"
+                android:textSize="11sp"
+                android:textColor="#64748B"
+                android:layout_marginTop="4dp"/>
+        </LinearLayout>
+
+        <View
+            android:layout_width="60dp"
+            android:layout_height="2dp"
+            android:background="#2563EB"
+            android:layout_marginHorizontal="8dp"
+            android:layout_marginBottom="16dp"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+            <TextView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:background="@android:drawable/toast_frame"
+                android:backgroundTint="#2563EB"
+                android:text="2"
+                android:textColor="#FFFFFF"
+                android:gravity="center"
+                android:textStyle="bold"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Services"
+                android:textSize="11sp"
+                android:textColor="#2563EB"
+                android:textStyle="bold"
+                android:layout_marginTop="4dp"/>
+        </LinearLayout>
+
+        <View
+            android:layout_width="60dp"
+            android:layout_height="2dp"
+            android:background="#CBD5E1"
+            android:layout_marginHorizontal="8dp"
+            android:layout_marginBottom="16dp"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+            <TextView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:background="@android:drawable/toast_frame"
+                android:backgroundTint="#E2E8F0"
+                android:text="3"
+                android:textColor="#64748B"
+                android:gravity="center"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Payment"
+                android:textSize="11sp"
+                android:textColor="#64748B"
+                android:layout_marginTop="4dp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardMiniPasien"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="0dp"
+        app:cardBackgroundColor="#F1F5F9"
+        app:layout_constraintTop_toBottomOf="@id/layoutStepper">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="12dp">
+            <TextView
+                android:id="@+id/txtHeaderIdPasien"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ID: Loading..."
+                android:textColor="#2563EB"
+                android:textSize="11sp"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/txtHeaderNamaPasien"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nama Pasien"
+                android:textColor="#0F172A"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:layout_marginTop="2dp"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/lblLayanan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="20dp"
+        android:text="Pilih Layanan Medis"
+        android:textColor="#0F172A"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/cardMiniPasien" />
+
+    <RadioGroup
+        android:id="@+id/rgLayanan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@id/lblLayanan">
+
+        <RadioButton
+            android:id="@+id/rbLayanan1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Checkup Umum + Obat (Rp 150.000)"
+            android:textColor="#0F172A"
+            android:padding="8dp"
+            android:layout_marginBottom="8dp"
+            android:buttonTint="#2563EB"/>
+
+        <RadioButton
+            android:id="@+id/rbLayanan2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Konsultasi Spesialis (Rp 250.000)"
+            android:textColor="#0F172A"
+            android:padding="8dp"
+            android:layout_marginBottom="8dp"
+            android:buttonTint="#2563EB"/>
+
+        <RadioButton
+            android:id="@+id/rbLayanan3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tindakan IGD &amp; Rawat Luka (Rp 400.000)"
+            android:textColor="#0F172A"
+            android:padding="8dp"
+            android:buttonTint="#2563EB"/>
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btnKePembayaran"
+        android:layout_width="0dp"
+        android:layout_height="54dp"
+        android:layout_margin="20dp"
+        android:backgroundTint="#2563EB"
+        android:text="Lanjut ke Pembayaran ›"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:cornerRadius="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

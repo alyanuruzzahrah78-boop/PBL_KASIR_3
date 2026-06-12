@@ -1,19 +1,13 @@
 package com.example.simrskel3
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import androidx.fragment.app.Fragment
+import androidx.appcompat.app.AppCompatActivity
 
-class Dashboard : Fragment() {
+class Dashboard : AppCompatActivity() {
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Mantra untuk menempelkan layout XML fragment_dashboard ke dalam fragment ini
-        return inflater.inflate(R.layout.dashboard_activity, container, false)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        // Kita langsung pasang layout XML-nya di sini
+        setContentView(R.layout.dashboard_activity)
     }
 }

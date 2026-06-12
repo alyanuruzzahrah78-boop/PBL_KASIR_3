@@ -12,6 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SIMRSKEL3">
+
         <activity
             android:name=".LoginActivity"
             android:exported="true">
@@ -36,6 +37,15 @@
         <activity
             android:name=".LaporanActivity"
             android:exported="false" />
+        <activity
+            android:name=".KasirPasienActivity"
+            android:exported="true" />
+        <activity
+            android:name=".KasirLayananActivity"
+            android:exported="true" />
+        <activity
+            android:name=".KasirBayarActivity"
+            android:exported="true" />
     </application>
 
 </manifest>

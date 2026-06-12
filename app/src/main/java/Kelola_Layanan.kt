@@ -131,9 +131,5 @@ class KelolaLayananActivity : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
-
-        val intent = Intent(this, DaftarRoleActivity::class.java)
-        startActivity(intent)
-        finish()
     }
 }

@@ -9,20 +9,33 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        // 1. Ini tugas pertama: Menampilkan layout Dashboard Utama kalian
-        setContentView(R.layout.activity_main)
+        // 1. Menampilkan layout utama dashboard
+        setContentView(R.layout.dashboard_activity)
 
-        // 2. Ini tugas kedua: Menghubungkan tombol menu layanan bawah
-        val btnMenuServices = findViewById<LinearLayout>(R.id.menu_services)
+        // 2. Inisialisasi menu bawah sesuai ID XML kamu yang baru
+        val menuDashboard = findViewById<LinearLayout>(R.id.menu_dashboard)
+        val menuServices = findViewById<LinearLayout>(R.id.menu_services)
+        val menuHistory = findViewById<LinearLayout>(R.id.menu_history)
+        val menuReports = findViewById<LinearLayout>(R.id.menu_reports)
 
-        // 3. Logika klik: Kalau menu layanan diklik, langsung buka halaman layanan
-        btnMenuServices.setOnClickListener {
+        // 3. Logika klik masing-masing menu bawah
+        menuDashboard?.setOnClickListener {
+            // Sudah di dashboard, diamkan saja
+        }
+
+        menuServices?.setOnClickListener {
             val intent = Intent(this, KelolaLayananActivity::class.java)
             startActivity(intent)
         }
 
-        val intent = Intent(this, DaftarRoleActivity::class.java)
-        startActivity(intent)
-        finish()
+        menuHistory?.setOnClickListener {
+            val intent = Intent(this, Riwayat_History_Transaksi::class.java)
+            startActivity(intent)
+        }
+
+        menuReports?.setOnClickListener {
+            val intent = Intent(this, LaporanActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
