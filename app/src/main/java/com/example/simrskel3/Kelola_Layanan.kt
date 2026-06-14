@@ -1,10 +1,11 @@
-package com.example.simrskel3.com.example.simrskel3
+package com.example.simrskel3
 
 import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -17,7 +18,6 @@ import com.example.simrskel3.MainActivity
 import com.example.simrskel3.R
 import com.example.simrskel3.Riwayat_History_Transaksi
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import kotlin.jvm.java
 
 class KelolaLayananActivity : AppCompatActivity() {
 
@@ -28,43 +28,15 @@ class KelolaLayananActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_kelola_layanan)
 
-        // 1. ISI DATA DUMMY (Sudah disesuaikan dengan model baru)
+        // 1. Data Dummy
         daftarLayananAsli = listOf(
-            Layanan.Layanan(
-                1,
-                "Konsultasi Umum",
-                "Poli Umum • Reguler",
-                150000,
-                "Aktif",
-                R.drawable.ic_poli_medical
-            ),
-            Layanan.Layanan(
-                2,
-                "Vaksinasi Influenza",
-                "Poli Imunisasi • Paket",
-                450000,
-                "Aktif",
-                R.drawable.ic_vaksin
-            ),
-            Layanan.Layanan(
-                3,
-                "Rontgen Dada (Thorax)",
-                "Radiologi • Penunjang",
-                280000,
-                "Aktif",
-                R.drawable.ic_rotgen
-            ),
-            Layanan.Layanan(
-                4,
-                "Cek Gula Darah",
-                "Laboratorium • Rutin",
-                750000,
-                "Aktif",
-                R.drawable.ic_biotech
-            )
+            Layanan.Layanan(1, "Konsultasi Umum", "Poli Umum • Reguler", 150000, "Aktif", R.drawable.ic_poli_medical),
+            Layanan.Layanan(2, "Vaksinasi Influenza", "Poli Imunisasi • Paket", 450000, "Aktif", R.drawable.ic_vaksin),
+            Layanan.Layanan(3, "Rontgen Dada (Thorax)", "Radiologi • Penunjang", 280000, "Aktif", R.drawable.ic_rotgen),
+            Layanan.Layanan(4, "Cek Gula Darah", "Laboratorium • Rutin", 750000, "Aktif", R.drawable.ic_biotech)
         )
 
-        // 2. Jalankan RecyclerView (Sekarang aman karena data sudah terisi)
+        // 2. Jalankan RecyclerView
         aturRecyclerView(daftarLayananAsli)
 
         // 3. Logika Pencarian
@@ -74,17 +46,16 @@ class KelolaLayananActivity : AppCompatActivity() {
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                 saringData(s.toString())
             }
-
             override fun afterTextChanged(s: Editable?) {}
         })
 
-        // 4. Logika Klik Tombol Tambah (+)
+        // 4. Tombol Tambah Layanan Baru (FAB)
         val fabTambahLayanan = findViewById<FloatingActionButton>(R.id.fabTambahLayanan)
         fabTambahLayanan?.setOnClickListener {
             Toast.makeText(this, "Tambah layanan baru diklik!", Toast.LENGTH_SHORT).show()
         }
 
-        // 5. Aktifkan Navigasi Bawah
+        // 5. Mengaktifkan Navigasi Bawah & Logout Header
         setupBottomNavigation()
     }
 
@@ -112,6 +83,7 @@ class KelolaLayananActivity : AppCompatActivity() {
         val menuServices = findViewById<LinearLayout>(R.id.menu_services)
         val menuHistory = findViewById<LinearLayout>(R.id.menu_history)
         val menuReports = findViewById<LinearLayout>(R.id.menu_reports)
+        val btnlogout = findViewById<ImageView>(R.id.btnKeluarRole)
 
         menuServices?.setOnClickListener {
             Toast.makeText(this, "Anda sudah berada di halaman Layanan", Toast.LENGTH_SHORT).show()
@@ -121,19 +93,28 @@ class KelolaLayananActivity : AppCompatActivity() {
             val intent = Intent(this, Riwayat_History_Transaksi::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
             startActivity(intent)
+            // 🟢 AMAN: Tidak ada finish() di sini
         }
 
         menuDashboard?.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
             startActivity(intent)
-            finish()
+            // 🟢 FIX: Kata 'finish()' di sini SUDAH DIHAPUS agar halaman tidak bunuh diri!
         }
 
         menuReports?.setOnClickListener {
             val intent = Intent(this, LaporanActivity::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
             startActivity(intent)
+            // 🟢 FIX: Kata 'finish()' di sini JUGA SUDAH DIHAPUS!
+        }
+
+        // Logika Klik Logout ke Halaman Login (Hanya di sini yang boleh pakai finish)
+        btnlogout?.setOnClickListener {
+            val intentLogin = Intent(this, LoginActivity::class.java)
+            intentLogin.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            startActivity(intentLogin)
             finish()
         }
     }

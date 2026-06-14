@@ -8,6 +8,8 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.widget.PopupMenu
 import androidx.recyclerview.widget.RecyclerView
+import java.text.NumberFormat
+import java.util.Locale
 
 class LayananAdapter(private var listLayanan: List<Layanan.Layanan>) :
     RecyclerView.Adapter<LayananAdapter.LayananViewHolder>() {
@@ -31,10 +33,17 @@ class LayananAdapter(private var listLayanan: List<Layanan.Layanan>) :
 
         holder.txtNamaLayanan.text = layanan.namaLayanan
         holder.txtKategori.text = layanan.kategori
-        holder.txtHarga.text = "Rp ${layanan.harga}"
         holder.badgeStatus.text = layanan.status
 
-        // 2. TAMBAHKAN LINE INI: Pasang gambar ikon secara dinamis
+        // 🟢 FIX FORMAT UANG: Dipaksa ke String lewat format rupiah agar tidak memicu silent crash!
+        try {
+            val formatRupiah = NumberFormat.getCurrencyInstance(Locale("in", "ID"))
+            holder.txtHarga.text = formatRupiah.format(layanan.harga).replace("Rp", "Rp ")
+        } catch (e: Exception) {
+            holder.txtHarga.text = "Rp ${layanan.harga.toString()}"
+        }
+
+        // Pasang gambar ikon secara dinamis
         holder.imgIkonLayanan.setImageResource(layanan.ikonGambar)
 
         holder.tombolPilihan.setOnClickListener { view ->

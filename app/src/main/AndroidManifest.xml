@@ -29,7 +29,7 @@
             android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name=".com.example.simrskel3.KelolaLayananActivity"
+            android:name=".KelolaLayananActivity"
             android:exported="false" />
         <activity
             android:name=".Riwayat_History_Transaksi"

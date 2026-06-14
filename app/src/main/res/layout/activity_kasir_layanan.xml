@@ -54,14 +54,15 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:gravity="center">
+
             <TextView
                 android:layout_width="32dp"
                 android:layout_height="32dp"
-                android:background="@android:drawable/toast_frame"
+                android:background="@drawable/bg_circle_gray"
                 android:backgroundTint="#E2E8F0"
+                android:gravity="center"
                 android:text="1"
-                android:textColor="#64748B"
-                android:gravity="center"/>
+                android:textColor="#64748B" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -83,15 +84,16 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:gravity="center">
+
             <TextView
                 android:layout_width="32dp"
                 android:layout_height="32dp"
-                android:background="@android:drawable/toast_frame"
+                android:background="@drawable/bg_cricle_blue"
                 android:backgroundTint="#2563EB"
-                android:text="2"
-                android:textColor="#FFFFFF"
                 android:gravity="center"
-                android:textStyle="bold"/>
+                android:text="2"
+                android:textColor="#E2E8F0"
+                android:textStyle="bold" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -114,14 +116,15 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:gravity="center">
+
             <TextView
                 android:layout_width="32dp"
                 android:layout_height="32dp"
-                android:background="@android:drawable/toast_frame"
+                android:background="@drawable/bg_circle_gray"
                 android:backgroundTint="#E2E8F0"
+                android:gravity="center"
                 android:text="3"
-                android:textColor="#64748B"
-                android:gravity="center"/>
+                android:textColor="#64748B" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -226,7 +229,7 @@
         android:textColor="#FFFFFF"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:cornerRadius="20dp"
+        app:cornerRadius="18dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

@@ -20,21 +20,19 @@ class DaftarRoleActivity : AppCompatActivity() {
         btnRoleAdmin?.setOnClickListener {
             val intentAdmin = Intent(this, MainActivity::class.java)
             startActivity(intentAdmin)
+            finish() // 🟢 TAMBAHKAN INI KAK, biar halaman Daftar Role-nya mati dan ga ngumpet lagi!
         }
 
         // MASUK KE HALAMAN KASIR PASIEN
         btnRoleKasir?.setOnClickListener {
             val intentKasir = Intent(this, KasirPasienActivity::class.java)
             startActivity(intentKasir)
+            finish() // 🟢 TAMBAHKAN INI JUGA biar adil dan aman!
         }
 
         btnKeluar?.setOnClickListener {
-            // Ganti 'LoginActivity' dengan nama file Activity Login kamu yang sebenarnya ya!
             val intentLogin = Intent(this, LoginActivity::class.java)
-
-            // Tambahkan flags ini agar tumpukan halaman sebelumnya terhapus bersih
             intentLogin.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-
             startActivity(intentLogin)
             finish()
         }
